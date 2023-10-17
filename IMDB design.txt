@@ -1,0 +1,52 @@
+
+create table movies(
+id integer not null,
+Movi_Name text,
+img varchar,
+review id integer not null,
+reviews_rating
+);
+--------------------------------
+
+insert into movies values(
+  1, "The Magicians elephant", "https://m.media-amazon.com/images/M/MV5BYjRlOTYwYj…YzBhNGRiNWYzXkEyXkFqcGdeQXVyMTEzMTI1Mjk3._V1_.jpg", 101, 9),
+  (2, "The Monkey King", "https://cdnph.upi.com/ph/st/th/1741689618623/2023/…ler-Jimmy-O-Yang-voices-hero-in-animated-film.jpg", 102, 9.5),
+(3, "Ice Age", "https://cdnph.upi.com/ph/st/th/1741689618623/2023/…ler-Jimmy-O-Yang-voices-hero-in-animated-film.jpg", 103, 10);
+------------------------------
+
+create table artists(
+movie_id integer not null,
+Movi_Name text,
+artist_name varchar
+);
+------------------------------
+insert into artists values
+(1, "The Magicians elephant","Noah Jupe"),
+(1, "The Magicians elephant", "Aasif Mandvi"),
+(1, "The Magicians elephant","Pixie Davies"),
+(2, "The Monkey King","Jimmy O. Yang"),
+(2, "The Monkey King", "Jolie Hoang-Rappaport"),
+(2, "The Monkey King","Bowen Yang"),
+(3, "Ice Age","Ray Romano"),
+(3, "Ice Age", "John Leguizamo"),
+(3, "Ice Age","Chris Wedge");
+----------------------------------
+create table artists_roll(
+movie_id integer not null,
+Movi_Name text,
+artist_name varchar,
+artist_roll varchar
+);
+----------------------------------
+insert into artists_roll values
+(1, "The Magicians elephant","Noah Jupe", "peter"),
+(1, "The Magicians elephant", "Aasif Mandvi", "The King"),
+(1, "The Magicians elephant","Pixie Davies", "Adele"),
+(2, "The Monkey King","Jimmy O. Yang", "Monkey King"),
+(2, "The Monkey King", "Jolie Hoang-Rappaport", "Lin"),
+(2, "The Monkey King","Bowen Yang", "Dragon King"),
+(3, "Ice Age","Ray Romano", "Manny Manfred"),
+(3, "Ice Age", "John Leguizamo", "sid sid"),
+(3, "Ice Age","Chris Wedge", "Dodo Scrat");
+----------------------------
+select artists.Movi_Name,  artists.artist_name, artist_roll from artists join artists_roll on artists.artist_name=artists_roll.artist_name
